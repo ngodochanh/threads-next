@@ -1,9 +1,9 @@
 import { getServerSession } from 'next-auth';
 import { CustomSession, authOptions } from '../auth/[...nextauth]/options';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/DB/db.config';
 
-export async function POST(request: NextResponse) {
+export async function POST(request: NextRequest) {
   const session: CustomSession | null = await getServerSession(authOptions);
   if (!session) {
     return NextResponse.json({ status: 401, message: 'Un-Authorized' });
