@@ -8,6 +8,7 @@ import ImagePreviewCard from '../common/ImagePreviewCard';
 import axios from 'axios';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 function AddThreads() {
   const imageRef = useRef<HTMLInputElement | null>(null);
@@ -19,6 +20,7 @@ function AddThreads() {
 
   const { toast } = useToast();
   const router = useRouter();
+  const { data } = useSession();
 
   const handleClick = () => {
     imageRef.current?.click();
@@ -73,7 +75,7 @@ function AddThreads() {
     <div className="mt-5">
       {previewUrl ? <ImagePreviewCard image={previewUrl} callback={removePreviewImg} /> : <></>}
       <div className="flex justify-start items-start space-x-4">
-        <UserAvatar name="Tu" image="" />
+        <UserAvatar name={data?.user?.name! ?? "T"} image="" />
         <textarea
           className="w-full h-24 text-md p-2 bg-muted outline-none resize-none rounded-lg placeholder:font-normal"
           placeholder='Post something amazing...'

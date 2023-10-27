@@ -6,7 +6,7 @@ import DeletePostBtn from '../threads/DeletePostBtn';
 function UserPostBar({ post, isAuthCard }: { post: PostType; isAuthCard?: boolean }) {
   return (
     <div className="flex">
-      <UserAvatar name="Tu" image="" />
+      <UserAvatar name={post.user.name} image="" />
 
       <div className="flex justify-between w-full ml-2 items-start">
         <strong>{post.user.name}</strong>

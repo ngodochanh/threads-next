@@ -33,6 +33,8 @@ type UserType = {
   id: number;
   name: string;
   username: string;
+  email?: string;
+  image?: string;
 };
 
 type CommentType = {
@@ -49,6 +51,7 @@ type ShowUserType = {
   name: string;
   email: string;
   username: string;
+  image: string;
   Post: Array<PostType> | [];
   Comment: Array<CommentType> | [];
 };

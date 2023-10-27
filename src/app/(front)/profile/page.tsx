@@ -17,7 +17,7 @@ async function Profile() {
       <DynamicNavBar title="Profile" />
 
       <div className="mt-5 flex items-center space-x-4">
-        <UserProfileAvatar name="Tushar" />
+        <UserProfileAvatar name={session?.user?.name!} image={session?.user?.image!} />
 
         <div className="">
           <h1 className="text-2xl font-bold">{session?.user?.name}</h1>

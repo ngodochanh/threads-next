@@ -60,12 +60,10 @@ function Login() {
             <Image src="/images/logo.svg" alt="Logo" width={50} height={50} />
           </div>
 
-          {params.get('message') ? (
+          {params.get('message') && (
             <div className="bg-green-500 p-4 rounded-lg my-4">
               <strong>Success!</strong> {params.get('message')}
             </div>
-          ) : (
-            <></>
           )}
 
           <h1 className="text-2xl font-bold">Login</h1>

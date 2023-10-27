@@ -18,9 +18,11 @@ import UserAvatar from '../common/UserAvatar';
 import { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../ui/use-toast';
+import { useRouter } from 'next/navigation';
 
 function AddComment({ post }: { post: PostType }) {
   const { data } = useSession();
+  const router = useRouter();
   const { toast } = useToast();
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -40,6 +42,7 @@ function AddComment({ post }: { post: PostType }) {
         if (response.status === 400) {
           setErrors(response.errors);
         } else if (response.status === 200) {
+          router.refresh();
           setContent('');
           setErrors({});
           toast({
@@ -70,7 +73,7 @@ function AddComment({ post }: { post: PostType }) {
             </div>
 
             <div className="mt-5 flex justify-start items-start">
-              <UserAvatar name={data?.user?.name!} />
+              <UserAvatar name={data?.user?.name! ?? 'T'} image="" />
 
               <textarea
                 className="w-full h-24 text-md p-2 bg-background outline-none resize-none rounded-lg placeholder:font-normal ml-2"

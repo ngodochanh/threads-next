@@ -18,6 +18,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: numb
       name: true,
       email: true,
       username: true,
+      image: true,
       Post: {
         include: {
           user: {

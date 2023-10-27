@@ -13,6 +13,7 @@ export type CustomUser = {
   name?: string | null;
   email?: string | null;
   username?: string | null;
+  image?: string | null;
 };
 
 export const authOptions: AuthOptions = {

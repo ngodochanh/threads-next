@@ -15,7 +15,7 @@ async function Notifications() {
         notifications.map((item) => (
           <div key={item.id} className="mt-5">
             <div className="flex items-start space-x-4">
-              <UserAvatar name={item.user.name} />
+              <UserAvatar name={item.user.name} image=""/>
               <div className="bg-muted w-full rounded-lg p-4">
                 <div className="flex justify-between items-start w-full">
                   <p className="font-bold">{item.user.name}</p>

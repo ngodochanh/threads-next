@@ -20,6 +20,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: numb
           id: true,
           name: true,
           username: true,
+          image: true,
         },
       },
       Comment: {
@@ -29,6 +30,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: numb
               id: true,
               name: true,
               username: true,
+              image: true,
             },
           },
         },

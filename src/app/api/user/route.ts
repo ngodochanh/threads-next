@@ -19,6 +19,7 @@ export async function GET() {
       id: true,
       name: true,
       username: true,
+      image: true,
     },
   });
 

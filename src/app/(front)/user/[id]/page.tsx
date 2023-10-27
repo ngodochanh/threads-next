@@ -13,7 +13,7 @@ async function ShowUser({ params }: { params: { id: number } }) {
       <DynamicNavBar title="Profile" />
 
       <div className="mt-5 flex items-center space-x-4">
-        <UserProfileAvatar name={user?.name!} />
+        <UserProfileAvatar name={user?.name!} image="" />
 
         <div className="">
           <h1 className="text-2xl font-bold">{user?.name}</h1>

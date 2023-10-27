@@ -6,7 +6,7 @@ function UserListCard({user} : {user: UserType}) {
   return (
     <div className="w-full shadow-sm p-4 rounded-md mb-3">
       <div className="flex">
-        <UserAvatar name={user.name} image="" />
+        <UserAvatar name={user.name} image={user.image} />
         <div className="flex justify-between items-start w-full">
           <div className="flex flex-col">
             <strong className="text-md font-bold ml-2">{user.name}</strong>

@@ -9,9 +9,11 @@ import SharePost from './SharePost';
 import Env from '@/config/env';
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 function PostCard({ post, noRedirect, isAuthCard }: { post: PostType; noRedirect?: boolean; isAuthCard?: boolean }) {
   const [status, setStatus] = useState<string>('');
+  const router = useRouter();
 
   const likeDislike = (status: string) => {
     setStatus(status);
@@ -23,6 +25,7 @@ function PostCard({ post, noRedirect, isAuthCard }: { post: PostType; noRedirect
         status: status,
       })
       .then((res) => {
+        router.refresh();
         console.log('The like response is ', res.data);
       })
       .catch((err) => {
